@@ -1,0 +1,46 @@
+- Criar model ContaBancaria:
+	{
+		IdConta: int
+		CPFUsuario (recuperar do perfil): string				
+		NumeroConta: int	
+		Saldo: int 
+	}
+
+- Associar conta bancária de alguma maneira ao usuario.
+
+- Realizar migration no banco de dados - TabelaConta
+
+- Criar API XPTO ContaBancaria (Receber/Remover/Editar/Adicionar)
+
+- Consumir a api XPTO.
+
+- Receber os dados json.
+
+- Serializar json para um obj.
+
+- Retornar exibir objeto para o cliente (aba minha conta).
+
+- Definir as operações via api Transferencia, Deposito e Saque
+	Transferencia: 
+	{ 
+		- Saldo não pode ficar negativo.
+		- Transferencia nao pode ser negativa.
+		- Atualizar saldo pessoal.
+		- Informar destinatário pelo numero da conta.
+		- Verificar veracidade da conta dasnatário.
+		- Atualizar saldo da conta destinatário
+	
+	}
+
+	Deposito:
+	{	
+		- Informar valor não negativo
+		- Informar destinatário pelo numero da conta.
+		- Atualizar saldo da conta destinatário
+	}
+	
+	Saque: 
+	{
+		- Saldo não pode ficar negativo
+		- Atualizar saldo pessoal.
+	}
