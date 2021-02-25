@@ -52,7 +52,7 @@
 
 <h4>O projeto teve a utilização de alguns recursos disponibilizados na internet, como vídeo-aulas externas e alguns tutoriais, entretanto, a sua criação e proposta veio através de conteúdos ensinados durante o bootcamp oferecido pela Tecnologia Unica.<h4>
 
-<p>A construção do mesmo tem <p>nenhum vínculo</p> com a empresa, e sua criação foi totalmente com fies educacional (por conta da utilização do nome/identidade visual). Os dados associados a empresa foram todos retirados do <a href="https://www.tecnologiaunica.com.br/">site oficial.</a>, sem uma permissão direta.</p>
+<p>A construção do mesmo tem <b>nenhum vínculo</b> com a empresa, e sua criação foi totalmente com fies educacional (por conta da utilização do nome/identidade visual). Os dados associados a empresa foram todos retirados do <a href="https://www.tecnologiaunica.com.br/">site oficial.</a>, sem uma permissão direta.</p>
 
 <h3>Projeto criado por Samuel Nunes</h3>
 <p>samuelnunessergio@gmail.com</p>
