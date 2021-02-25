@@ -1,0 +1,53 @@
+﻿@model DesafioUnica.ViewModel.Login
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_LayoutNulo";
+}
+
+<!-- Modal -->
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form asp-action="Login">
+            <div class="modal-body">
+                <div class="account-wall">
+                    <div class="form-group divSpaceMargin">
+                        @if (ViewBag.Erro != null)
+                        {<div class="msgErro">@ViewBag.Erro</div>}
+                    </div>
+                    <div class="form-group divSpaceMargin">
+                        <input asp-for="Email"  placeholder="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group divSpaceMargin">
+                        <input asp-for="Senha" placeholder="Senha" class="form-control" />
+                        <span asp-validation-for="Senha" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group divSpaceMargin">
+                        <button type="button" class="text-dark esqueceu-senha border-0 bg-transparent">Esqueceu a senha?</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer row border-0">
+                <div class="col-6 m-auto" style="padding:0px 3px 0px 15px">
+                    <a asp-action="Cadastro" class="btn btn-lg btnRegister w-100">Cadastre-se</a>
+                </div>
+                <div class="col-6 m-auto"  style="padding:0px 15px 0px 3px">
+                    <input type="submit" value="Entrar" class="btn btn-lg btn-dark w-100" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,73 @@
+﻿
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Padronize os processos seletivos com vídeo entrevista, testes, questionários, envie feedbacks em massa e controle todas as etapas do recrutamento e seleção. Descarte de vez o recebimento de currículos por e-mails e faça uma gestão completa">
+
+    <!-- IDENTIDADE -->
+    <title>@ViewData["Title"]</title>
+    <link rel="shortcut icon" href="~/img/favicon.ico" />
+
+    <!-- FONTES-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/layout.css" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <a class="navbar-brand logo-image" asp-controller="Home" asp-action="Index"><img src="~/img/logo.png" alt="alternative" /></a>
+
+        <div class="humberger__open navbar-toggler text-center">
+            <i style="color:#1C1C1C" class="text-center navbar-toggler-awesome fas fa-bars"></i>
+        </div>
+
+        <div class="collapse navbar-collapse d-none d-lg-block" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a asp-action="Index" asp-controller="Home" class="btn btn-primary mr-3" id="cadastrar-nav">Voltar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="humberger__menu__overlay"></div>
+    <div class="humberger__menu__wrapper">
+        <div class="humberger__menu__logo">
+            <a asp-controller="Home" asp-action="Index"><img src="~/img/logo.png" alt=""></a>
+        </div>
+        <nav class="humberger__menu__nav mobile-menu order-1">
+            <ul>
+                <li>
+                    <a asp-action="Index" asp-controller="Home" class="btn btn-primary" id="cadastrar-mobile">Voltar</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+
+
+    @RenderBody()
+
+    <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" />
+    <div id="modal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" />
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/jquery.slicknav.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/scripts.js"></script>
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿@model DesafioUnica.Models.Usuario
+
+@{
+    ViewData["Title"] = "Finalizar Cadastro";
+
+}
+
+
+<div class="container">
+    <div class="cadastro justify-content-center text-center row">
+        <div class="cadastro-content col-lg-4" style="margin-top: 5rem">
+            <div class="row">
+                <div class="col-12">
+                    <form asp-action="FinalizarCadastro">
+                        <div class="account-wall">
+                            <div class="form-group title">
+                                <h3 class="text-center">Confirme o endereço de e-mail para concluir</h3>
+                            </div>
+                            <input type="hidden" asp-for="Nome" class="form-control" />
+                            <input type="hidden" asp-for="Telefone" class="form-control" />
+                            <input type="hidden" asp-for="Cpf" class="form-control" />
+                            <input type="hidden" asp-for="Email" class="form-control" />
+                            <input type="hidden" asp-for="Senha" class="form-control" />
+
+                            <div class="form-group divSpaceMargin">
+                                @if (ViewBag.Msg != null)
+                                {
+                    <div class="msgErro">@ViewBag.Msg</div>}
+                            </div>
+                            <div class="divSpaceMargin">
+                                <input type="submit" value="Confirmar email" class="btn btn-block btn-success" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

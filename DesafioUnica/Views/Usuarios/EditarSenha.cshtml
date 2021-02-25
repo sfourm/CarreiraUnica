@@ -1,0 +1,54 @@
+﻿@model DesafioUnica.ViewModel.EditarSenha
+
+@{
+    ViewData["Title"] = "Editar Senha";
+    Layout = "_LayoutNulo";
+}
+
+<!-- Modal -->
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Editar Senha</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form asp-action="EditarSenha" asp-controller="Usuarios" method="post">
+            <div class="modal-body">
+                <input type="hidden" asp-for="UsuarioId" />
+                <div class="account-wall">
+                    <div class="form-group title">
+                        <h1 class="text-center">Editar usuário</h1>
+                        <h5 class="text-center">Altere a sua senha de acesso</h5>
+                    </div>
+
+                    <div class="form-group divSpaceMargin">
+                        <label asp-for="Senha" class="control-label"></label>
+                        <input type="password" asp-for="Senha" class="form-control" />
+                        <span asp-validation-for="Senha" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group divSpaceMargin">
+                        <label asp-for="ConfirmarSenha" class="control-label"></label>
+                        <input type="password" asp-for="ConfirmarSenha" class="form-control" />
+                        <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-block">
+                <div class="form-group" style="margin-top:45px;">
+                    <input type="submit" value="Salvar" class="btn btn-block btn-primary" />
+                </div>
+                <div class="form-group text-center">
+                    <a asp-action="Perfil">Voltar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

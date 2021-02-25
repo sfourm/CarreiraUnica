@@ -1,0 +1,14 @@
+﻿@using Microsoft.AspNetCore.Http
+
+@{ string layout = "";
+
+    if (!string.IsNullOrEmpty(Context.Session.GetString("UsuarioId")))
+    {
+        layout = "_LayoutLogado";
+    }
+    else
+    {
+        layout = "_Layout";
+    }
+    Layout = layout;
+}

@@ -1,0 +1,27 @@
+﻿@{  
+    ViewData["Title"] = "Confirmar Email";
+    ViewBag.Title = "Confirme seu Email";
+    Layout = "_LayoutCadastro";
+}
+<div class="container">
+    <div class="cadastro justify-content-center text-center row">
+        <div class="cadastro-content col-lg-4" style="margin-top: 5rem">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center">@ViewBag.Title</h2>
+                    <div class="account-wall bg-warning p-2">
+                        <div class="text-center">
+                            @if (ViewBag.Msg != null)
+                            {
+                                <label class="text-danger">@ViewBag.Msg</label> }
+                            else
+                            {
+                            <label class="mb-0">Cheque o e-mail enviado para o endereço <strong>@ViewBag.Email</strong></label>}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

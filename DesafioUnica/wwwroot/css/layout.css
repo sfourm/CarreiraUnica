@@ -1,0 +1,151 @@
+﻿a{
+    cursor: pointer;
+    text-decoration: none;
+}
+:focus{
+    border: none;
+    outline: none;
+}
+.cadastro {
+    margin-top: 8rem;
+}
+.image-container img {
+    width: 150%;
+    margin-left: -13rem;
+    margin-top: -2rem;
+}
+.cadastro-content {
+    padding: 25px;
+    background-color: #ffffff;
+    height: 100%;
+    box-shadow: 0 1rem 1rem 1rem rgba(0, 0, 0, 0.4);
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 2.2rem;
+    padding: 10px;
+    margin: 10px 0;
+}
+.cadastro h1 {
+    margin-bottom: 0px;
+    font-size: 2rem;
+    line-height: 3.125rem;
+}
+
+.cadastro h5 {
+    margin-bottom: 0px;
+    font-size: 1rem;
+}
+
+.cadastro .titulo {
+    margin-bottom: 4rem;
+    font-size: 1rem;
+}
+
+.cadastro .formCadastro {
+    margin: auto;
+    width: 100%;
+}
+
+.cadastro input {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    height: 35px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: none;
+    transition: border-color .15s ease-in-out;
+}
+.cadastro input:focus {
+    color: #495057;
+    border: 1px solid #ced4da;
+    box-shadow: none;
+}
+
+#cadastrar {
+    border: none;
+    color: white;
+    margin-top: 0px;
+    background-color: #C71E1E;
+    margin: auto;
+    padding: 8px 20px;
+    width: 80%;
+    height: auto;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+    #cadastrar:hover {
+        background-color: #343a40;
+        outline: none;
+        border: none;
+    }
+
+@media (max-width: 576px) {
+
+    .cadastro{
+        margin: 6rem 2px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+    .cadastro .cadastro-content {
+        text-align: center;
+    }
+    .cadastro .formCadastro {
+        margin: auto;
+    }
+}
+
+.account-wall {
+    margin-top: 20px;
+    padding: 40px 0px 30px 0px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.divSpaceMargin{
+    margin-left:15px;
+    margin-right:15px;
+}
+
+.msgErro {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.msgSuccess {
+    background-color: #5CB85C;
+    color: #2d8b2d;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.btnRegister {
+    border: 1px solid #495057;
+    text-decoration: none;
+    color: #495057;
+    box-shadow: none;
+}
+
+.btnRegister:hover {
+    color: #373737;
+    border: 1px solid #373737;
+}
+
+.title{
+    margin-bottom:35px;
+}

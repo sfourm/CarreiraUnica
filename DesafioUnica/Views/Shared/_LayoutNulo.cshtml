@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Padronize os processos seletivos com vídeo entrevista, testes, questionários, envie feedbacks em massa e controle todas as etapas do recrutamento e seleção. Descarte de vez o recebimento de currículos por e-mails e faça uma gestão completa">
+
+    <!-- IDENTIDADE -->
+    <title>@ViewData["Title"]</title>
+    <link rel="shortcut icon" href="~/img/favicon.ico" />
+
+    <!-- FONTES-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/layout.css" />
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" />
+    <div id="modal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" />
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/jquery.slicknav.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/scripts.js"></script>
+    <script>
+        $(function () {
+            $(".esqueceu-senha").click(function () {
+                $("#modal2").load("usuario/recuperar-senha", function () {
+                    $("#modal2").modal();
+                })
+            });
+        })
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

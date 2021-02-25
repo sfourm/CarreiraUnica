@@ -1,0 +1,74 @@
+﻿@model DesafioUnica.ViewModel.Cadastro
+
+@{ ViewData["Title"] = "Cadastro";
+    Layout = "_LayoutCadastro"; }
+
+<div class="container">
+    <div class="cadastro justify-content-center text-center row">
+        <div class="image-container d-none d-lg-block col-lg-6">
+            <img src="~/img/destaque-cadastro.png" alt="alternative">
+        </div>
+
+        <div class="cadastro-content col-lg-4">
+            <div class="titulo">
+                <h3 class="text-center">Cadastro de usuário</h3>
+                <h5 class="text-center">Insira suas informações de login</h5>
+            </div>
+            <form asp-action="Cadastro" method="post" enctype="multipart/form-data">
+                <div class="formCadastro text-left">
+
+                    <div class="divCadastro">
+                        <input type="text" placeholder="Nome Completo" asp-for="Nome" class="form-control text-capitalize" required/>
+                        <span asp-validation-for="Nome" class="text-danger"></span>
+                    </div>
+
+                    <div class="divCadastro row">
+                        <div class="col-12 col-lg-6 col-md-6 pr-lg-2">
+                            <input type="text" placeholder="Telefone" asp-for="Telefone" id="Telefone" class="form-control" required/>
+                            <span asp-validation-for="Telefone" class="text-danger"></span>
+                        </div>
+                        <div class="col-12 col-lg-6 col-md-6 pl-lg-2">
+                            <input type="text" placeholder="CPF" asp-for="Cpf" id="Cpf" class="form-control" required/>
+                            <span asp-validation-for="Cpf" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="divCadastro">
+                        <input type="email" placeholder="Email" asp-for="Email" class="form-control" required/>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="divCadastro row">
+                        <div class="col-12 col-lg-6 col-md-6 pr-lg-2">
+                            <input type="password" placeholder="Senha" asp-for="Senha" class="form-control" required/>
+                            <span asp-validation-for="Senha" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-12 col-lg-6 col-md-6 pl-lg-2">
+                            <input type="password" placeholder="Confirmar Senha" asp-for="ConfirmarSenha" class="form-control" required/>
+                            <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="divCadastro" style="margin-top:45px;">
+                        <input type="submit" value="Cadastrar" id="cadastrar" class="btn btn-block btn-primary" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+     
+
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('#Telefone').mask('(00) 00000-0000');
+            $('#Cpf').mask('000.000.000-00');
+        });
+    </script>
+}
+

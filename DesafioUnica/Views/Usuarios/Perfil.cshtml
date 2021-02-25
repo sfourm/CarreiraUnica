@@ -1,0 +1,37 @@
+﻿@model DesafioUnica.Models.Usuario
+
+@{ ViewData["Title"] = "Perfil"; }
+<div class="container">
+    <div id="perfil" class="perfil">
+        <div class="perfil-content">
+            <div class="perfil-box">
+                <div class="form-group title">
+                    <h1 class="text-center">Usuário logado</h1>
+                    <h5 class="text-center">Bem vindo @Model.Nome</h5>
+                </div>
+                <div class="form-group divSpaceMargin">
+                    <label class="control-label"><b>NOME: </b>@Model.Nome</label>
+                </div>
+                <div class="form-group divSpaceMargin">
+                    <label class="control-label"><b>TELEFONE: </b>@Model.Telefone</label>
+                </div>
+                <div class="form-group divSpaceMargin">
+                    <label class="control-label"><b>CPF: </b>@Model.Cpf</label>
+                </div>
+                <div class="form-group divSpaceMargin">
+                    <label class="control-label"><b>EMAIL: </b>@Model.Email</label>
+                </div>
+
+                <div class="form-group divSpaceMargin text-center">
+                    <button type="button" data-id="@Model.UsuarioId" class="btn btn-info editar-senha">Editar Senha</button>
+                    <button type="button" data-id="@Model.UsuarioId" class="btn btn-info editar-perfil">Editar Perfil</button>
+                    <a class="btn btn-danger" asp-action="Logout">Deslogar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
