@@ -30,7 +30,7 @@ namespace DesafioUnica.Controllers
             return View(await _context.Usuarios.ToListAsync());
         }
 
-        // GET: Users/Delete/5
+        ///[GET] Users/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -48,7 +48,7 @@ namespace DesafioUnica.Controllers
             return View(usuario);
         }
 
-        // POST: Users/Delete/5
+        ///[POST] Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -59,7 +59,7 @@ namespace DesafioUnica.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        /// [GET] Tela de cadastro
+        ///[GET] Tela de cadastro
         [Route("usuario/cadastro")]
         [HttpGet]
         public IActionResult Cadastro()
@@ -70,7 +70,7 @@ namespace DesafioUnica.Controllers
         }
 
 
-        /// [GET] Tela de aviso de envio de email 
+        ///[GET] Tela de aviso de envio de email 
         [HttpGet]
         public IActionResult ConfirmarEmail()
         {
@@ -84,7 +84,7 @@ namespace DesafioUnica.Controllers
         }
 
 
-        /// [GET] Tela de finalizar cadastro
+        ///[GET] Tela de finalizar cadastro
         [HttpGet]
         public IActionResult FinalizarCadastro(string id)
         {
@@ -100,10 +100,8 @@ namespace DesafioUnica.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [Route("usuario/login")]
-        /// <summary>
         /// [GET] Tela de login de usuário
-        /// </summary>
+        [Route("usuario/login")]
         [HttpGet]
         public IActionResult Login()
         {
@@ -149,6 +147,33 @@ namespace DesafioUnica.Controllers
         }
 
 
+        //[GET] Recuperar senha
+        [Route("usuario/recuperar-senha")]
+        [HttpGet]
+        public IActionResult RecuperarSenha()
+        {
+            if (!String.IsNullOrEmpty(HttpContext.Session.GetString("UsuarioId"))) return RedirectToAction(nameof(Perfil));
+            return View();
+        }
+
+
+        //[POST] Recuperar senha
+        [Route("usuario/recuperar-senha")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult RecuperarSenha(RecuperarSenha forgotPasswordModel)
+        {
+            if (!EmailUsuarioExiste(forgotPasswordModel.Email)) ModelState.AddModelError("Email", "O e-mail não existe");
+            ViewBag.MsgSuccess = null;
+            if (ModelState.IsValid)
+            {
+                ViewBag.MsgSuccess = "Foi enviado um e-mail para você";
+                SendEmail(forgotPasswordModel.Email, "Usuário", "Recuperação de senha", "Recupere sua senha", "Utilize o link para recuperar o acesso", "https://localhost:44332/Usuarios/EditarSenha?id=");
+            }
+            return View(forgotPasswordModel);
+        }
+
+
         /// [GET] Edição de senha de acesso
         [HttpGet]
         public async Task<IActionResult> EditarSenha(int? id)
@@ -174,34 +199,10 @@ namespace DesafioUnica.Controllers
 
             EditarSenha editarSenha = new EditarSenha();
             EditarSenha senhaEditarSenha = editarSenha;
-            senhaEditarSenha.UsuarioId = usuario.UsuarioId; 
+            senhaEditarSenha.UsuarioId = usuario.UsuarioId;
             return View(senhaEditarSenha);
         }
 
-        [Route("usuario/recuperar-senha")]
-        //[GET] Recuperar senha
-        [HttpGet]
-        public IActionResult RecuperarSenha()
-        {
-            if (!String.IsNullOrEmpty(HttpContext.Session.GetString("UsuarioId"))) return RedirectToAction(nameof(Perfil));
-            return View();
-        }
-
-        [Route("usuario/recuperar-senha")]
-        //[POST] Recuperar senha
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult RecuperarSenha(RecuperarSenha forgotPasswordModel)
-        {
-            if (!EmailUsuarioExiste(forgotPasswordModel.Email)) ModelState.AddModelError("Email", "O e-mail não existe");
-            ViewBag.MsgSuccess = null;
-            if (ModelState.IsValid)
-            {
-                ViewBag.MsgSuccess = "Foi enviado um e-mail para você";
-                SendEmail(forgotPasswordModel.Email, "Usuário", "Recuperação de senha", "Recupere sua senha", "Utilize o link para recuperar o acesso", "https://localhost:44332/Usuarios/");
-            }
-            return View(forgotPasswordModel);
-        }
 
 
         ///[POST] Edição de senha de acesso
@@ -272,9 +273,9 @@ namespace DesafioUnica.Controllers
         }
 
 
-        /// <summary>
+        
         /// [POST] Tela de cadastro 
-        /// </summary>
+        
         [HttpPost]
         [Route("usuario/cadastro")]
         [ValidateAntiForgeryToken]

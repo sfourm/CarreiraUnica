@@ -8,6 +8,9 @@ namespace DesafioUnica.ViewModel
 {
     public class EditarSenha
     {
+        [Required]
+        public string Token { get; set; }
+
         public int UsuarioId { get; set; }
 
         [Display(Name = "Senha", Description = "Digite sua senha")]
