@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using DesafioUnica.Models;
+using Classes.Models;
 using System.Net.Mail;
 using Microsoft.AspNetCore.Http;
 using System.Net;
@@ -112,6 +112,7 @@ namespace DesafioUnica.Controllers
 
         /// [GET] Tela de dados do usuário logado
         [HttpGet]
+        [Route("usuario/perfil")]
         public IActionResult Perfil()
         {
             if (String.IsNullOrEmpty(HttpContext.Session.GetString("UsuarioId"))) return RedirectToAction(nameof(Login));
@@ -123,6 +124,7 @@ namespace DesafioUnica.Controllers
 
         /// [GET] Editar usuário
         [HttpGet]
+        [Route("usuario/editar-perfil/{id?}")]
         public async Task<IActionResult> EditarPerfil(int? id)
         {
             if (String.IsNullOrEmpty(HttpContext.Session.GetString("UsuarioId"))) return RedirectToAction("Index", "Home");
@@ -130,6 +132,7 @@ namespace DesafioUnica.Controllers
             {
                 return NotFound();
             }
+            
 
             //Se tentar usar id de outro usuario redireciona pro usuario logado
             if (id.ToString() != HttpContext.Session.GetString("UsuarioId").ToString())
@@ -175,6 +178,7 @@ namespace DesafioUnica.Controllers
 
 
         /// [GET] Edição de senha de acesso
+        [Route("usuario/editar-senha/{id?}")]
         [HttpGet]
         public async Task<IActionResult> EditarSenha(int? id)
         {
@@ -207,6 +211,7 @@ namespace DesafioUnica.Controllers
 
         ///[POST] Edição de senha de acesso
         [HttpPost]
+        [Route("usuario/editar-senha/{id?}")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditarSenha(int id, EditarSenha editarSenhaModel)
         {
@@ -243,14 +248,33 @@ namespace DesafioUnica.Controllers
 
         /// [POST] Editar usuário
         [HttpPost]
+        [Route("usuario/editar-perfil/{id?}")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditarPerfil(int id, Usuario usuario)
         {
+
             if (id != usuario.UsuarioId)
             {
                 return NotFound();
             }
 
+            if(usuario.Email != HttpContext.Session.GetString("UsuarioEmail")) { 
+                //Verifica se email existe
+                if (EmailUsuarioExiste(usuario.Email)) ModelState.AddModelError("Email", "O e-mail inserido já cadastrado!");
+            }
+
+            if (usuario.Cpf != HttpContext.Session.GetString("UsuarioCPF"))
+            {
+                //Verifica se o Cpf existe
+                if (CpfUsuarioExiste(usuario.Cpf)) ModelState.AddModelError("CPF", "O CPF inserido já cadastrado!");
+            }
+
+            if (usuario.Telefone != HttpContext.Session.GetString("UsuarioTelefone"))
+            {
+                //Verifica se o telefone existe
+                if (TelefoneUsuarioExiste(usuario.Telefone)) ModelState.AddModelError("Telefone", "O telefone inserido já cadastrado!");
+            }
+              
             ViewBag.msg = null;
             if (ModelState.IsValid)
             {
@@ -268,14 +292,13 @@ namespace DesafioUnica.Controllers
                         return NotFound();
                     }
                 }
-            }
+            }          
             return View(usuario);
         }
 
 
         
         /// [POST] Tela de cadastro 
-        
         [HttpPost]
         [Route("usuario/cadastro")]
         [ValidateAntiForgeryToken]
@@ -328,7 +351,7 @@ namespace DesafioUnica.Controllers
         /// [POST] Tela de finalizar cadastro
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> FinalizarCadastro(Models.Usuario usuario)
+        public async Task<IActionResult> FinalizarCadastro(Usuario usuario)
         {
             ViewBag.Msg = null;
             try
@@ -370,6 +393,7 @@ namespace DesafioUnica.Controllers
             return _context.Usuarios.Any(e => e.UsuarioId == id);
         }
 
+
         //Verifica se o CPF já esta cadastrado
         private bool CpfUsuarioExiste(string cpf)
         {
@@ -380,7 +404,7 @@ namespace DesafioUnica.Controllers
             return false;
         }
 
-        //Verifica se um email já esta cadastrado
+        //Verifica se o email já esta cadastrado
         private bool EmailUsuarioExiste(string email)
         {
             if (String.IsNullOrEmpty(email)) return false;
@@ -597,7 +621,9 @@ namespace DesafioUnica.Controllers
             HttpContext.Session.Remove("UsuarioNome");
             HttpContext.Session.Remove("UsuarioEmail");
             HttpContext.Session.Remove("UsuarioId");
-            Response.Redirect("https://localhost:44332/");
+            HttpContext.Session.Remove("UsuarioCPF");
+            HttpContext.Session.Remove("UsuarioTelefone");
+            Response.Redirect("https://localhost:44332/");            
         }
 
 
@@ -606,6 +632,8 @@ namespace DesafioUnica.Controllers
         {
             HttpContext.Session.SetString("UsuarioNome", usuario.Nome);
             HttpContext.Session.SetString("UsuarioEmail", usuario.Email);
+            HttpContext.Session.SetString("UsuarioCPF", usuario.Cpf);
+            HttpContext.Session.SetString("UsuarioTelefone", usuario.Telefone);
             HttpContext.Session.SetString("UsuarioId", usuario.UsuarioId.ToString());
         }
 

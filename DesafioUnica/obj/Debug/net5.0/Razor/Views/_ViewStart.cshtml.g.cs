@@ -21,7 +21,7 @@ using DesafioUnica;
 #nullable disable
 #nullable restore
 #line 2 "D:\Git\CarreiraUnica\DesafioUnica\Views\_ViewImports.cshtml"
-using DesafioUnica.Models;
+using Classes.Models;
 
 #line default
 #line hidden
@@ -34,7 +34,7 @@ using Microsoft.AspNetCore.Http;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d99c0a2a05a90e144d1b2b6a62af6cfac55fb180", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7f2ab029c7b5d54b7c51ec9a56c19c4658a1c605", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4c511821ac2f7afc3473d4a95388a709d4b7f712", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

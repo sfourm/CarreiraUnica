@@ -7,7 +7,7 @@
 
     <!-- IDENTIDADE -->
     <title>@ViewData["Title"]</title>
-    <link rel="shortcut icon" src="~/img/favicon.ico" />
+    <link rel="shortcut icon" href="~/img/favicon.ico" />
 
     <!-- FONTES-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -34,7 +34,7 @@
         <div class="collapse navbar-collapse d-none d-lg-block" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a asp-action="Index" asp-controller="Vagas" class="btn btn-primary mr-3" style="height:38px;padding-top:9px" id="cadastrar-nav">VER VAGAS</a>
+                    <a asp-action="Index" asp-controller="Vagas" class="btn btn-primary mr-3" style="height:38px;padding-top:9px" id="cadastrar-nav">CONTA BANCÁRIA</a>
                 </li>
                 <li class="nav-item">
                     <div class="btn-group">
@@ -60,7 +60,7 @@
         <nav class="humberger__menu__nav mobile-menu order-1">
             <ul>
                 <li>
-                    <a asp-action="Index" asp-controller="Vagas" class="btn btn-primary" id="cadastrar-mobile">VER VAGAS</a>
+                    <a asp-action="Index" asp-controller="Vagas" class="btn btn-primary" id="cadastrar-mobile">CONTA BANCÁRIA</a>
                 </li>
                 <li>
                     <div class="btn-group">
@@ -86,23 +86,27 @@
     <script src="~/js/jquery.slicknav.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/scripts.js"></script>
-
+    <script src="~/lib/jquery/dist/jquery.js"></script>
     <script>
+        
         $(function () {
             $(".editar-senha").click(function () {
                 var id = $(this).attr("data-id")
-                $("#modal").load("EditarSenha/" + id, function () {
-                    $("#modal").modal();
-                })
-            });
-
-            $(".editar-perfil").click(function () {
-                var id = $(this).attr("data-id")
-                $("#modal").load("EditarPerfil/" + id, function () {
+                $("#modal").load("editar-senha/" + id, function () {
                     $("#modal").modal();
                 })
             });
         })
+
+        $(function () {
+            $(".editar-perfil").click(function () {
+                var id = $(this).attr("data-id")
+                $("#modal").load("editar-perfil/" + id, function () {
+                    $("#modal").modal();
+                })
+            });
+        })
+
     </script>
     @RenderSection("Scripts", required: false)
 </body>

@@ -1,4 +1,4 @@
-namespace DesafioUnica.Models
+namespace Classes.Models
 {
     public class ErrorViewModel
     {

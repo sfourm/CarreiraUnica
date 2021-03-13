@@ -76,7 +76,7 @@ button:focus, button:active {
 	box-shadow: none;
 }
 
-btn-solid-xlg:hover {
+.btn-solid-xlg:hover {
 	color: #fff;
 	background-color: #961c1c;
 	text-decoration: none;

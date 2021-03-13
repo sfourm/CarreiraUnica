@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace DesafioUnica.Models
+namespace Classes.Models
 {
     public class Cryptography
     {

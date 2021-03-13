@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 
-namespace DesafioUnica.Models
+namespace Classes.Models
 {
     public class Usuario
     {

@@ -21,13 +21,13 @@ using DesafioUnica;
 #nullable disable
 #nullable restore
 #line 2 "D:\Git\CarreiraUnica\DesafioUnica\Views\_ViewImports.cshtml"
-using DesafioUnica.Models;
+using Classes.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3b42f6033ab9425924c6ef2c01d497512e2a2ee4", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7f2ab029c7b5d54b7c51ec9a56c19c4658a1c605", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4c511821ac2f7afc3473d4a95388a709d4b7f712", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn-solid-lg page-scroll  text-decoration-none"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -77,7 +77,7 @@ using DesafioUnica.Models;
                     <h1>USUÁRIOS</h1>
                     <p>Amplie suas possibilidades! Cadastre no nosso banco e aproveite os recursos exclusivos que disponibilizamos para você gratuitamente!</p>
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3b42f6033ab9425924c6ef2c01d497512e2a2ee45870", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3b42f6033ab9425924c6ef2c01d497512e2a2ee45865", async() => {
                 WriteLiteral("CADASTRA-SE");
             }
             );
@@ -96,7 +96,7 @@ using DesafioUnica.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                </div>\r\n            </div>\r\n            <div class=\"col-lg-6\">\r\n                <div class=\"image-container\">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "3b42f6033ab9425924c6ef2c01d497512e2a2ee47478", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "3b42f6033ab9425924c6ef2c01d497512e2a2ee47473", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -141,7 +141,7 @@ using DesafioUnica.Models;
                     <h5>Tecnologia</h5>
                     <p>Utilizamos de ferramentas que possibilitam oferecer");
             WriteLiteral(" recursos muito mais do que o esperado.</p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n\r\n<div class=\"slider-footer\">\r\n    <div class=\"container text-center\">\r\n        <h3>Faça parte você também</h3>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3b42f6033ab9425924c6ef2c01d497512e2a2ee49936", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3b42f6033ab9425924c6ef2c01d497512e2a2ee49931", async() => {
                 WriteLiteral("CADASTRA-SE");
             }
             );

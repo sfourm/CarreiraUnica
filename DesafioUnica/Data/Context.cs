@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-using DesafioUnica.Models;
+using Classes.Models;
 
 namespace DesafioUnica.Data
 {

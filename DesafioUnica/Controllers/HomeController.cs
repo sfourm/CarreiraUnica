@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using DesafioUnica.Models;
+using Classes.Models;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Net.Http;

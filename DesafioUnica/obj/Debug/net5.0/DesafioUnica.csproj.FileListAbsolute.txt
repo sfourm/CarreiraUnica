@@ -544,3 +544,7 @@ D:\Git\CarreiraUnica\DesafioUnica\obj\Debug\net5.0\DesafioUnica.dll
 D:\Git\CarreiraUnica\DesafioUnica\obj\Debug\net5.0\ref\DesafioUnica.dll
 D:\Git\CarreiraUnica\DesafioUnica\obj\Debug\net5.0\DesafioUnica.pdb
 D:\Git\CarreiraUnica\DesafioUnica\obj\Debug\net5.0\DesafioUnica.genruntimeconfig.cache
+D:\Git\CarreiraUnica\DesafioUnica\bin\Debug\net5.0\appsettings.Development.json
+D:\Git\CarreiraUnica\DesafioUnica\bin\Debug\net5.0\Classes.exe
+D:\Git\CarreiraUnica\DesafioUnica\bin\Debug\net5.0\Classes.dll
+D:\Git\CarreiraUnica\DesafioUnica\bin\Debug\net5.0\Classes.pdb
